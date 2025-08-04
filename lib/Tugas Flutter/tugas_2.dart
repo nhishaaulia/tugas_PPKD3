@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class Tugas2 extends StatelessWidget {
   const Tugas2 ({super.key});
 
- final String  description = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.';
+ final String  description = 'Hiii! Nama saya Nhisha Aulia ^^\n\Lulusan Sistem Informasi dari Universitas Bakrie. Saya aktif dalam organisasi dan berbagai proyek selama kuliah yang mengasah kemampuan komunikasi, manajemen waktu, dan kerja tim. Saya seorang individu yang berdedikasi, teliti, dan memiliki semangat belajar tinggi. Memiliki pengalaman dalam teknologi informasi dan mampu bekerja secara mandiri maupun dalam tim. Terbiasa menghadapi tantangan baru dengan pendekatan yang solutif dan komunikatif. Siap belajar dan berkontribusi secara maksimal di dunia profesional.';
  
  @override
   Widget build(BuildContext context) {
@@ -16,17 +16,19 @@ class Tugas2 extends StatelessWidget {
 
       body: SingleChildScrollView(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children:
+           [
             //Nama Lengkap
             Padding(
               padding: const EdgeInsets.all(16.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+              child: Column(
                 children: [
-                  Icon(Icons.account_circle, size:50),
-                  SizedBox(width: 8),
-                  Text("Nhisha Aulia",style: TextStyle( fontSize: 24,fontWeight: FontWeight.bold,
+                  CircleAvatar(
+                    radius: 50,
+                  ), 
+                  SizedBox(height: 8),
+                  Text("Nhisha Aulia",style: TextStyle( fontSize: 30,fontWeight: FontWeight.bold,
                     ),
                   ),
                 ],
@@ -130,6 +132,7 @@ class Tugas2 extends StatelessWidget {
                 
                 // color: Colors.purple[100],
                 decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(15),
                   border: Border.all(
                 color: Colors.purple
                     
