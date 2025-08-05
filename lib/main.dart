@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ppkd_b_3/Tugas%20Flutter/tugas_3.dart';
+import 'package:ppkd_b_3/Tugas%20Flutter/tugas_4.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      home: Tugas3(),
+      home: Tugas4(),
     );
   }
 }
