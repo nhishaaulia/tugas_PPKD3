@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:ppkd_b_3/Tugas%20Flutter/Tugas%207%20Flutter/drawer_tugas.dart';
+import 'package:ppkd_b_3/extension/navigation.dart';
 
 class Tugas6 extends StatefulWidget {
   const Tugas6({super.key});
@@ -165,6 +167,7 @@ class _Tugas6State extends State<Tugas6> {
                           );
                         },
                       );
+                      context.push(DrawerTugas());
                     }
                   },
 
