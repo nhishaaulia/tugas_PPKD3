@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ppkd_b_3/Tugas%20Flutter/Tugas%207%20Flutter/drawer_tugas.dart';
 import 'package:ppkd_b_3/Tugas%20Flutter/tugas_6.dart';
 
 void main() {
@@ -40,11 +41,9 @@ class _MyAppState extends State<MyApp> {
       initialRoute: '/',
       routes: {
         '/': (context) => Tugas6(),
-        // '/Tugastes': (context) => Tugastes(),
-        // Tugas7flutter.id: (context) => Tugas7flutter(),
-        // DrawerTugas.id: (context) => DrawerTugas(),
+        DrawerMenu.id: (context) => DrawerMenu(),
       },
-      // home: Tugas6(),
+      // home: ListofmapTugas(),
     );
   }
 }
