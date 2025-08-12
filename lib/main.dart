@@ -37,7 +37,14 @@ class _MyAppState extends State<MyApp> {
         fontFamily: "Gilroy",
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: Tugas6(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => Tugas6(),
+        // '/Tugastes': (context) => Tugastes(),
+        // Tugas7flutter.id: (context) => Tugas7flutter(),
+        // DrawerTugas.id: (context) => DrawerTugas(),
+      },
+      // home: Tugas6(),
     );
   }
 }

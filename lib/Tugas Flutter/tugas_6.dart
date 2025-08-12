@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
-import 'package:ppkd_b_3/Tugas%20Flutter/Tugas%207%20Flutter/drawer_tugas.dart';
 import 'package:ppkd_b_3/extension/navigation.dart';
+import 'package:ppkd_b_3/tugas8/botnav.dart';
 
 class Tugas6 extends StatefulWidget {
   const Tugas6({super.key});
@@ -158,16 +158,23 @@ class _Tugas6State extends State<Tugas6> {
                             ),
                             actions: [
                               TextButton(
-                                child: Text("Lanjutkan"),
                                 onPressed: () {
-                                  Navigator.of(context).pop();
+                                  // Navigator.of(context).pop(); // tutup dialog
+                                  // Navigator.pushReplacement(
+                                  //   context,
+                                  //   MaterialPageRoute(
+                                  //     builder: (context) => CheckboxTugas(),
+                                  //   ),
+                                  // );
+                                  context.pushReplacement(MainScreen());
                                 },
+                                child: Text("Lanjutkan"),
                               ),
                             ],
                           );
                         },
                       );
-                      context.push(DrawerTugas());
+                      // context.push(CheckboxTugas());
                     }
                   },
 

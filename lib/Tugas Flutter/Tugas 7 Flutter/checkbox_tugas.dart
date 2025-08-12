@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// import 'package:ppkd_b_3/Tugas%20Flutter/Tugas%207%20Flutter/drawer_tugas.dart';
 
 class CheckboxTugas extends StatefulWidget {
   const CheckboxTugas({super.key});
@@ -9,16 +10,36 @@ class CheckboxTugas extends StatefulWidget {
 
 class _CheckboxTugasState extends State<CheckboxTugas> {
   bool isCheck = false;
-  bool isCheckSwitch = false;
+  final String data =
+      "Syarat & Ketentuan\n"
+      "Dengan menggunakan aplikasi ini, Anda menyetujui bahwa semua data yang Anda berikan adalah benar dan bertanggung jawab penuh atas penggunaannya.\n"
+      "Kami tidak bertanggung jawab atas kerugian yang timbul akibat penggunaan aplikasi ini.\n"
+      "Aplikasi ini hanya untuk keperluan pribadi dan bukan untuk tujuan komersial tanpa izin.\n"
+      "Kami berhak mengubah syarat dan ketentuan sewaktu-waktu tanpa pemberitahuan terlebih dahulu.";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Checkbox"), centerTitle: false),
+      // appBar: AppBar(
+      //   title: Text("Checkbox"),
+      //   centerTitle: true,
+      //   // backgroundColor: const Color.fromARGB(255, 255, 120, 179),
+      // ),
 
-      //Checkbox
+      // drawer: DrawerTugas(),
       body: Column(
         children: [
+          Container(
+            margin: EdgeInsets.all(12),
+            height: 200,
+            decoration: BoxDecoration(
+              color: const Color.fromARGB(255, 255, 226, 244),
+            ),
+            child: Text(data),
+          ),
+
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Checkbox(
                 activeColor: const Color.fromARGB(255, 255, 91, 168),
@@ -37,29 +58,6 @@ class _CheckboxTugasState extends State<CheckboxTugas> {
                 ? "Lanjutkan pendaftaran diperbolehkan"
                 : "Anda belum bisa melanjutkan",
           ),
-
-          SizedBox(height: 16),
-
-          //Switch
-          Text("Switch"),
-          Row(
-            children: [
-              Switch(
-                activeColor: const Color.fromARGB(255, 255, 91, 168),
-                value: isCheckSwitch,
-                onChanged: (value) {
-                  setState(() {
-                    isCheckSwitch = value;
-                  });
-                },
-              ),
-              Text(isCheckSwitch ? "Turn On" : "Turn Off"),
-            ],
-          ),
-
-          SizedBox(height: 16),
-
-          //Dropdown
         ],
       ),
     );
