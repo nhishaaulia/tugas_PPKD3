@@ -64,7 +64,7 @@ class _ListofmapTugasState extends State<ListofmapTugas> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("List Sepatu Sandal")),
+      // appBar: AppBar(title: Text("List Sepatu Sandal")),
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -81,7 +81,7 @@ class _ListofmapTugasState extends State<ListofmapTugas> {
                   subtitle: Text(dataProduk["price"].toString()),
                   trailing: CircleAvatar(backgroundColor: dataProduk["warna"]),
                   leading: CircleAvatar(
-                    backgroundColor: Colors.amber,
+                    backgroundColor: const Color.fromARGB(255, 255, 176, 235),
                     child: Text("${index + 1}"),
                   ),
                 );

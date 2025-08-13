@@ -16,32 +16,37 @@ class _DropdownTugasState extends State<DropdownTugas> {
       // appBar: AppBar(title: Text("Dropdown"), centerTitle: true),
 
       // drawer: const DrawerTugas(),
-      body: Column(
-        // mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          DropdownButton<String>(
-            hint: Text("Pilih Kategori Produk"),
-            value: selectedCategory,
-            items: [
-              "Elektronik",
-              "Pakaian",
-              "Makanan",
-              "Lainnya",
-            ].map((e) => DropdownMenuItem(value: e, child: Text(e))).toList(),
-            onChanged: (value) {
-              setState(() {
-                selectedCategory = value;
-              });
-            },
+      body: Padding(
+        padding: const EdgeInsets.all(40),
+        child: Container(
+          height: 150,
+          width: double.infinity,
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
+          child: Column(
+            // mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              DropdownButton<String>(
+                hint: Text("Pilih Kategori Produk"),
+                value: selectedCategory,
+                items: ["Elektronik", "Pakaian", "Makanan", "Lainnya"]
+                    .map((e) => DropdownMenuItem(value: e, child: Text(e)))
+                    .toList(),
+                onChanged: (value) {
+                  setState(() {
+                    selectedCategory = value;
+                  });
+                },
+              ),
+              SizedBox(height: 20),
+              Text(
+                selectedCategory == null
+                    ? "Anda belum memilih kategori"
+                    : "Anda memilih kategori: $selectedCategory",
+                style: TextStyle(fontSize: 16),
+              ),
+            ],
           ),
-          SizedBox(height: 20),
-          Text(
-            selectedCategory == null
-                ? "Anda belum memilih kategori"
-                : "Anda memilih kategori: $selectedCategory",
-            style: TextStyle(fontSize: 16),
-          ),
-        ],
+        ),
       ),
     );
   }

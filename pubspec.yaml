@@ -65,6 +65,7 @@ flutter:
       - assets/fonts/gilroy-bold/
       - assets/images/animations/result page success motion design.json
       - assets/images/animations/Payment Failed.json
+      - assets/images/animations/Success.json
 
   fonts:
     - family: Gilroy

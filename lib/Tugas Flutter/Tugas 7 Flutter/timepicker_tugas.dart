@@ -15,30 +15,39 @@ class _TimePickerTugasState extends State<TimePickerTugas> {
     return Scaffold(
       // appBar: AppBar(title: const Text("Time Picker")),
       // drawer: DrawerTugas(),
-      body: Column(
-        children: [
-          ElevatedButton(
-            onPressed: () async {
-              TimeOfDay? time = await showTimePicker(
-                context: context,
-                initialTime: TimeOfDay.now(),
-              );
-              if (time != null) {
-                setState(() {
-                  selectedTime = time;
-                });
-              }
-            },
-            child: Text("Pilih Waktu Pengingat"),
+      body: Padding(
+        padding: const EdgeInsets.all(40),
+        child: Container(
+          height: 150,
+          width: double.infinity,
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
+
+          child: Column(
+            children: [
+              ElevatedButton(
+                onPressed: () async {
+                  TimeOfDay? time = await showTimePicker(
+                    context: context,
+                    initialTime: TimeOfDay.now(),
+                  );
+                  if (time != null) {
+                    setState(() {
+                      selectedTime = time;
+                    });
+                  }
+                },
+                child: Text("Pilih Waktu Pengingat"),
+              ),
+              SizedBox(height: 20),
+              Text(
+                selectedTime == null
+                    ? "Belum memilih waktu"
+                    : "Pengingat diatur pukul: ${selectedTime!.format(context)}",
+                style: TextStyle(fontSize: 16),
+              ),
+            ],
           ),
-          SizedBox(height: 20),
-          Text(
-            selectedTime == null
-                ? "Belum memilih waktu"
-                : "Pengingat diatur pukul: ${selectedTime!.format(context)}",
-            style: TextStyle(fontSize: 16),
-          ),
-        ],
+        ),
       ),
     );
   }

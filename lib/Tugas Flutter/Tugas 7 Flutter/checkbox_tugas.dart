@@ -33,9 +33,9 @@ class _CheckboxTugasState extends State<CheckboxTugas> {
             margin: EdgeInsets.all(12),
             height: 200,
             decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 255, 226, 244),
+              color: const Color.fromARGB(255, 255, 238, 248),
             ),
-            child: Text(data),
+            child: Text(data, textAlign: TextAlign.justify),
           ),
 
           Row(

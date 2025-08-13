@@ -48,7 +48,7 @@ class _ListTugasState extends State<ListTugas> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("List Sepatu Sandal")),
+      // appBar: AppBar(title: Text("List Sepatu Sandal")),
       body: SingleChildScrollView(
         child: Column(
           children: [

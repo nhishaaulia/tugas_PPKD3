@@ -41,14 +41,30 @@ class _DataprodukmodelState extends State<Dataprodukmodel> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("List Sepatu Sandal")),
+      // appBar: AppBar(title: Text("List Sepatu Sandal")),
       body: SingleChildScrollView(
         child: Column(
           children: [
-            //List
-            Divider(),
-
             //Model
+            // Divider(),
+            // SizedBox(height: 10),
+            // Padding(
+            //   padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+            //   child: ListView.builder(
+            //     physics: NeverScrollableScrollPhysics(),
+            //     shrinkWrap: true,
+            //     itemCount: produkModel.length,
+            //     itemBuilder: (BuildContext context, int index) {
+            //       final Dataprodukmodel = produkModel[index];
+            //       return Card(
+            //         child: ListTile(
+            //           title: Text(Dataprodukmodel.nama),
+            //           subtitle: Text(Dataprodukmodel.price.toString()),
+            //           leading: Color(Dataprodukmodel.warna),
+            //         ),
+            //       );
+            //     },
+            //   ),
             Divider(),
 
             ListView.builder(
@@ -57,15 +73,17 @@ class _DataprodukmodelState extends State<Dataprodukmodel> {
               itemCount: produkModel.length,
               itemBuilder: (BuildContext context, int index) {
                 final dataProdukModel = produkModel[index];
-                return ListTile(
-                  title: Text(dataProdukModel.nama),
-                  subtitle: Text(dataProdukModel.price.toString()),
-                  trailing: CircleAvatar(
-                    backgroundColor: dataProdukModel.warna,
-                  ),
-                  leading: CircleAvatar(
-                    backgroundColor: const Color.fromARGB(255, 255, 182, 224),
-                    child: Text("${index + 1}"),
+                return Card(
+                  child: ListTile(
+                    title: Text(dataProdukModel.nama),
+                    subtitle: Text(dataProdukModel.price.toString()),
+                    trailing: CircleAvatar(
+                      backgroundColor: dataProdukModel.warna,
+                    ),
+                    leading: CircleAvatar(
+                      backgroundColor: const Color.fromARGB(255, 255, 182, 224),
+                      child: Text("${index + 1}"),
+                    ),
                   ),
                 );
               },

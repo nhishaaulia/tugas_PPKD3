@@ -43,7 +43,7 @@ class _MyAppState extends State<MyApp> {
         '/': (context) => Tugas6(),
         DrawerMenu.id: (context) => DrawerMenu(),
       },
-      // home: ListofmapTugas(),
+      // home: Halaman1(),
     );
   }
 }

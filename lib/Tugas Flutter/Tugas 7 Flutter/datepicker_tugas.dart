@@ -16,32 +16,41 @@ class _DatePickerTugasState extends State<MenuDatePicker> {
     return Scaffold(
       // appBar: AppBar(title: const Text("Date Picker")),
       // drawer: DrawerTugas(),
-      body: Column(
-        children: [
-          ElevatedButton(
-            onPressed: () async {
-              DateTime? date = await showDatePicker(
-                context: context,
-                initialDate: DateTime.now(),
-                firstDate: DateTime(1900),
-                lastDate: DateTime(2100),
-              );
-              if (date != null) {
-                setState(() {
-                  selectedDate = date;
-                });
-              }
-            },
-            child: Text("Pilih Tanggal Lahir"),
+      body: Padding(
+        padding: const EdgeInsets.all(40),
+        child: Container(
+          height: 150,
+          width: double.infinity,
+          decoration: BoxDecoration(borderRadius: BorderRadius.circular(20)),
+
+          child: Column(
+            children: [
+              ElevatedButton(
+                onPressed: () async {
+                  DateTime? date = await showDatePicker(
+                    context: context,
+                    initialDate: DateTime.now(),
+                    firstDate: DateTime(1900),
+                    lastDate: DateTime(2100),
+                  );
+                  if (date != null) {
+                    setState(() {
+                      selectedDate = date;
+                    });
+                  }
+                },
+                child: Text("Pilih Tanggal Lahir"),
+              ),
+              SizedBox(height: 20),
+              Text(
+                selectedDate == null
+                    ? "Belum memilih tanggal"
+                    : "Tanggal Lahir: ${DateFormat('d MMMM yyyy').format(selectedDate!)}",
+                style: TextStyle(fontSize: 16),
+              ),
+            ],
           ),
-          SizedBox(height: 20),
-          Text(
-            selectedDate == null
-                ? "Belum memilih tanggal"
-                : "Tanggal Lahir: ${DateFormat('d MMMM yyyy').format(selectedDate!)}",
-            style: TextStyle(fontSize: 16),
-          ),
-        ],
+        ),
       ),
     );
   }
