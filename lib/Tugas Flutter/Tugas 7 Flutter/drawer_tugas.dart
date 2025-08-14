@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ppkd_b_3/Tugas%20Flutter/Tugas%2010%20Flutter/halaman_1.dart';
+import 'package:ppkd_b_3/Tugas%20Flutter/Tugas%2011%20Flutter/register_screen.dart';
 import 'package:ppkd_b_3/Tugas%20Flutter/Tugas%207%20Flutter/checkbox_tugas.dart';
 import 'package:ppkd_b_3/Tugas%20Flutter/Tugas%207%20Flutter/datepicker_tugas.dart';
 import 'package:ppkd_b_3/Tugas%20Flutter/Tugas%207%20Flutter/dropdown_tugas.dart';
@@ -23,6 +24,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
   int _selectedIndexDrawer = 0;
   static const List<Widget> _widgetOptions = <Widget>[
     Halamanutama(appBar: false),
+    Halaman1(),
     CheckboxTugas(),
     SwitchTugas(),
     DropdownTugas(),
@@ -31,10 +33,11 @@ class _DrawerMenuState extends State<DrawerMenu> {
     ListTugas(),
     ListofmapTugas(),
     Dataprodukmodel(),
-    Halaman1(),
+    RegisterScreen(),
   ];
   static const List<String> _title = [
     "Dashboard",
+    "Formulir Pendaftaran Flutter",
     "Syarat & Ketentuan",
     "Switch",
     "DropDown",
@@ -43,7 +46,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
     "List View",
     "List Of Map",
     "Produk Model",
-    "Formulir Pendaftaran Flutter",
+    "Pendataan Produk Toko",
   ];
   void onItemTap(int index) {
     setState(() {
@@ -75,7 +78,6 @@ class _DrawerMenuState extends State<DrawerMenu> {
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
               ),
             ),
-
             ListTile(
               leading: const Icon(Icons.dashboard),
               title: Text("Dashboard"),
@@ -84,10 +86,17 @@ class _DrawerMenuState extends State<DrawerMenu> {
               },
             ),
             ListTile(
+              leading: const Icon(Icons.description),
+              title: Text("Pendaftaran"),
+              onTap: () {
+                onItemTap(1);
+              },
+            ),
+            ListTile(
               leading: const Icon(Icons.check_box),
               title: Text("Checkbox"),
               onTap: () {
-                onItemTap(1);
+                onItemTap(2);
               },
             ),
 
@@ -95,7 +104,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
               leading: const Icon(Icons.brightness_6),
               title: Text("Switch"),
               onTap: () {
-                onItemTap(2);
+                onItemTap(3);
               },
             ),
 
@@ -104,7 +113,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
               leading: const Icon(Icons.arrow_drop_down_circle),
               title: Text("Dropdown"),
               onTap: () {
-                onItemTap(3);
+                onItemTap(4);
                 // onItemTap(2);
               },
             ),
@@ -112,7 +121,7 @@ class _DrawerMenuState extends State<DrawerMenu> {
               leading: const Icon(Icons.date_range),
               title: Text("Date Picker"),
               onTap: () {
-                onItemTap(4);
+                onItemTap(5);
               },
             ),
             ListTile(
@@ -123,35 +132,35 @@ class _DrawerMenuState extends State<DrawerMenu> {
                 //   context,
                 //   MaterialPageRoute(builder: (context) => const SwitchTugas()),
                 // );
-                onItemTap(5);
+                onItemTap(6);
               },
             ),
             ListTile(
               leading: const Icon(Icons.view_agenda),
               title: Text("List View"),
               onTap: () {
-                onItemTap(6);
+                onItemTap(7);
               },
             ),
             ListTile(
               leading: const Icon(Icons.list_alt_sharp),
               title: Text("List of Map"),
               onTap: () {
-                onItemTap(7);
+                onItemTap(8);
               },
             ),
             ListTile(
               leading: const Icon(Icons.model_training),
               title: Text("Produk Model"),
               onTap: () {
-                onItemTap(8);
+                onItemTap(9);
               },
             ),
             ListTile(
-              leading: const Icon(Icons.format_align_right),
-              title: Text("Pendaftaran"),
+              leading: const Icon(Icons.favorite),
+              title: Text("Pendataan Produk Toko"),
               onTap: () {
-                onItemTap(9);
+                onItemTap(10);
               },
             ),
           ],

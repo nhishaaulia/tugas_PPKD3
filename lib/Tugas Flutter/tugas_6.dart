@@ -126,7 +126,7 @@ class _Tugas6State extends State<Tugas6> {
                   style: TextStyle(
                     fontSize: 13,
                     fontWeight: FontWeight.bold,
-                    color: const Color.fromARGB(255, 228, 139, 112),
+                    color: const Color.fromARGB(255, 212, 149, 186),
                   ),
                 ),
               ),
@@ -179,7 +179,7 @@ class _Tugas6State extends State<Tugas6> {
                   },
 
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color.fromARGB(255, 53, 43, 202),
+                    backgroundColor: const Color.fromARGB(255, 255, 208, 255),
                     padding: const EdgeInsets.symmetric(vertical: 16),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(30),
@@ -190,7 +190,7 @@ class _Tugas6State extends State<Tugas6> {
                     style: TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
-                      color: Colors.white,
+                      color: const Color.fromARGB(255, 39, 39, 39),
                     ),
                   ),
                 ),
@@ -209,7 +209,7 @@ class _Tugas6State extends State<Tugas6> {
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 13,
-                          color: const Color.fromARGB(255, 228, 139, 112),
+                          color: const Color.fromARGB(255, 212, 149, 186),
                         ),
                       ),
                     ],
@@ -286,7 +286,7 @@ class _Tugas6State extends State<Tugas6> {
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 13,
-                        color: const Color.fromARGB(255, 228, 139, 112),
+                        color: const Color.fromARGB(255, 212, 149, 186),
                       ),
                     ),
                   ],
