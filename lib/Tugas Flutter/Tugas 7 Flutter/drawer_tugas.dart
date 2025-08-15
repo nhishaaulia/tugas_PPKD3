@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ppkd_b_3/Tugas%20Flutter/Tugas%2010%20Flutter/halaman_1.dart';
-import 'package:ppkd_b_3/Tugas%20Flutter/Tugas%2011%20Flutter/register_screen.dart';
+import 'package:ppkd_b_3/Tugas%20Flutter/Tugas%2011-12%20Flutter/register_screen.dart';
 import 'package:ppkd_b_3/Tugas%20Flutter/Tugas%207%20Flutter/checkbox_tugas.dart';
 import 'package:ppkd_b_3/Tugas%20Flutter/Tugas%207%20Flutter/datepicker_tugas.dart';
 import 'package:ppkd_b_3/Tugas%20Flutter/Tugas%207%20Flutter/dropdown_tugas.dart';

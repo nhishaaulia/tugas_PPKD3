@@ -71,8 +71,9 @@ class _Tugas6State extends State<Tugas6> {
                   ),
                 ),
                 validator: (value) {
-                  if (value == null || value.isEmpty)
+                  if (value == null || value.isEmpty) {
                     return "Email tidak boleh kosong";
+                  }
                   if (!value.contains('@')) return "Email tidak valid";
                   return null;
                 },
@@ -112,8 +113,9 @@ class _Tugas6State extends State<Tugas6> {
                   ),
                 ),
                 validator: (value) {
-                  if (value == null || value.isEmpty)
+                  if (value == null || value.isEmpty) {
                     return "Password tidak boleh kosong";
+                  }
                   return null;
                 },
               ),

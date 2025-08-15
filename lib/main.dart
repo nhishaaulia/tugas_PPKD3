@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ppkd_b_3/Tugas%20Flutter/Tugas%207%20Flutter/drawer_tugas.dart';
+import 'package:ppkd_b_3/Tugas%20Flutter/tugas_6.dart';
 
 void main() {
   runApp(const MyApp());
@@ -37,12 +37,12 @@ class _MyAppState extends State<MyApp> {
         fontFamily: "Gilroy",
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      initialRoute: '/',
-      routes: {
-        '/': (context) => DrawerMenu(),
-        DrawerMenu.id: (context) => DrawerMenu(),
-      },
-      // home: Halaman1(),
+      // initialRoute: '/',
+      // routes: {
+      //   '/': (context) => DrawerMenu(),
+      //   DrawerMenu.id: (context) => DrawerMenu(),
+      // },
+      home: Tugas6(),
     );
   }
 }
