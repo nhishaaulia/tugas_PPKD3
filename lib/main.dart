@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ppkd_b_3/Tugas%20Flutter/tugas_6.dart';
+import 'package:ppkd_b_3/Tugas%2023/view/get_api.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,14 +35,16 @@ class _MyAppState extends State<MyApp> {
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
         fontFamily: "Gilroy",
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color.fromARGB(255, 255, 121, 195),
+        ),
       ),
       // initialRoute: '/',
       // routes: {
       //   '/': (context) => DrawerMenu(),
       //   DrawerMenu.id: (context) => DrawerMenu(),
       // },
-      home: Tugas6(),
+      home: GetAPIScreen(),
     );
   }
 }
