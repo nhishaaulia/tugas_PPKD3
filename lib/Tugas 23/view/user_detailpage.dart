@@ -27,6 +27,18 @@ class UserDetailPage extends StatelessWidget {
         iconTheme: const IconThemeData(color: Colors.pink),
         elevation: 0,
       ),
+
+      // body: Stack(
+      //   children: [
+      //     // Background image
+      //     Positioned.fill(
+      //       child: Image.asset(
+      //         'assets/images/harry potter.jpeg',
+      //         fit: BoxFit.cover,
+      //         width: double.infinity,
+      //         height: double.infinity,
+      //       ),
+      //     ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.fromLTRB(16, 20, 16, 24),
         child: Column(
@@ -137,7 +149,7 @@ class UserDetailPage extends StatelessWidget {
 
             const SizedBox(height: 24),
 
-            // House (enum -> text)
+            // House
             if (houseText.isNotEmpty) ...[
               const Text(
                 'House:',
@@ -149,7 +161,7 @@ class UserDetailPage extends StatelessWidget {
               ),
               const SizedBox(height: 4),
               Text(
-                houseText, // contoh: "Gryffindor"
+                houseText,
                 style: const TextStyle(fontSize: 14, color: Colors.pink),
                 textAlign: TextAlign.center,
               ),
