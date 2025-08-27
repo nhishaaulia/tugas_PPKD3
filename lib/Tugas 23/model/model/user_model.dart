@@ -78,6 +78,8 @@ class Welcome {
     image: json["image"],
   );
 
+  get alternate => null;
+
   Map<String, dynamic> toJson() => {
     "id": id,
     "name": name,
