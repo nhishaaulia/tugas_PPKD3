@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:ppkd_b_3/Tugas%20Flutter/tugas15_flutter/api/model/register_model.dart';
+import 'package:ppkd_b_3/Tugas%20Flutter/tugas15_flutter/model/register_model.dart';
 import 'package:ppkd_b_3/Tugas%20Flutter/tugas15_flutter/preference/shared_preference.dart';
-import 'package:ppkd_b_3/Tugas%20Flutter/tugas15_flutter/register_user.dart';
+import 'package:ppkd_b_3/Tugas%20Flutter/tugas15_flutter/api/register_user.dart';
 
 class PostApiScreen extends StatefulWidget {
   const PostApiScreen({super.key});
@@ -15,6 +15,7 @@ class _PostApiScreenState extends State<PostApiScreen> {
   final TextEditingController nameController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   RegisterUserModel? user;
+  
   String? errorMessage;
   bool isVisibility = false;
   bool isLoading = false;

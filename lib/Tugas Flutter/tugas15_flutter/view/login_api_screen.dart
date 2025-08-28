@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:ppkd_b_3/Tugas%20Flutter/tugas15_flutter/model/register_model.dart';
+import 'package:ppkd_b_3/Tugas%20Flutter/tugas15_flutter/preference/shared_preference.dart';
+import 'package:ppkd_b_3/Tugas%20Flutter/tugas15_flutter/api/register_user.dart';
+import 'package:ppkd_b_3/Tugas%20Flutter/tugas15_flutter/view/home_api.dart';
+import 'package:ppkd_b_3/Tugas%20Flutter/tugas15_flutter/view/login_api_screen.dart';
+import 'package:ppkd_b_3/Tugas Flutter/tugas15_flutter/model/get_user_model.dart';
 import 'package:ppkd_b_3/Tugas%20Flutter/tugas15_flutter/view/post_api_screen.dart';
 import 'package:ppkd_b_3/extension/navigation.dart';
 
@@ -12,32 +18,68 @@ class LoginAPIScreen extends StatefulWidget {
 class _LoginAPIScreenState extends State<LoginAPIScreen> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  RegisterUserModel? user;
+  String? errorMessage;
+  bool isLoading = false;
   bool isVisibility = false;
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(body: Stack(children: [buildBackground(), buildLayer()]));
   }
 
-  login() async {
+   void loginUser() async {
+    setState(() {
+      isLoading = true;
+      errorMessage = null;
+    });
     final email = emailController.text.trim();
     final password = passwordController.text.trim();
     if (email.isEmpty || password.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("Email dan Password tidak boleh kosong")),
+        const SnackBar(
+          content: Text("Email, Password, dan Nama tidak boleh kosong"),
+        ),
       );
-      // isLoading = false;
+      isLoading = false;
 
       return;
     }
-    // final userData = await DbHelper.loginUser(email, password);
-    // if (userData != null) {
-    //   PreferenceHandler.saveLogin();
-    //   context.pushReplacementNamed(MainScreen.id);
-    // } else {
-    //   ScaffoldMessenger.of(context).showSnackBar(
-    //     const SnackBar(content: Text("Email atau Password salah")),
-    //   );
-    // }
+    try {
+      final result = await AuthenticationAPI.loginUser(
+        email: email,
+        password: password,
+      
+      );
+      setState(() {
+        user = result;
+      });
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text("Pendaftaran berhasil")));
+      PreferenceHandler.saveToken(user?.data?.token.toString() ?? "");
+      print(user?.toJson());
+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HalamanUtamaDua(),) );
+    } catch (e) {
+      print(e);
+      setState(() {
+        errorMessage = e.toString();
+      });
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(errorMessage.toString())));
+    } finally {
+      setState(() {});
+      isLoading = false;
+    }
+    // final user = User(email: email, password: password, name: name);
+    // await DbHelper.registerUser(user);
+    // Future.delayed(const Duration(seconds: 1)).then((value) {
+    //   isLoading = false;
+    //   ScaffoldMessenger.of(
+    //     context,
+    //   ).showSnackBar(const SnackBar(content: Text("Pendaftaran berhasil")));
+    // });
   }
 
   SafeArea buildLayer() {
@@ -100,7 +142,7 @@ class _LoginAPIScreenState extends State<LoginAPIScreen> {
                 height: 56,
                 child: ElevatedButton(
                   onPressed: () {
-                    login();
+                    loginUser();
                   },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: const Color.fromARGB(255, 255, 179, 204),
