@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ppkd_b_3/Tugas%2023/view/get_api.dart';
+import 'package:ppkd_b_3/Tugas%20Flutter/tugas15_flutter/view/login_api_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -44,7 +44,7 @@ class _MyAppState extends State<MyApp> {
       //   '/': (context) => DrawerMenu(),
       //   DrawerMenu.id: (context) => DrawerMenu(),
       // },
-      home: GetAPIScreen(),
+      home: LoginAPIScreen(),
     );
   }
 }
