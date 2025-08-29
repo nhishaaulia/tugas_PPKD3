@@ -24,9 +24,9 @@ class _HalamanUtamaDuaState extends State<HalamanUtamaDua> {
         _errorMessage = null;
       });
 
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("Data Berhasil Diambil")),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(const SnackBar(content: Text("Data Berhasil Diambil")));
     } catch (e) {
       if (!mounted) return;
       setState(() {
@@ -45,6 +45,10 @@ class _HalamanUtamaDuaState extends State<HalamanUtamaDua> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Profile", style: TextStyle(fontWeight: FontWeight.bold)),
+        backgroundColor: const Color.fromARGB(255, 255, 166, 196),
+      ),
       body: _buildBody(),
     );
   }
@@ -63,10 +67,7 @@ class _HalamanUtamaDuaState extends State<HalamanUtamaDua> {
             children: [
               const Icon(Icons.error_outline, size: 48),
               const SizedBox(height: 12),
-              Text(
-                _errorMessage!,
-                textAlign: TextAlign.center,
-              ),
+              Text(_errorMessage!, textAlign: TextAlign.center),
               const SizedBox(height: 16),
               ElevatedButton(
                 onPressed: () {
@@ -103,10 +104,12 @@ class _HalamanUtamaDuaState extends State<HalamanUtamaDua> {
               showDialog(
                 context: context,
                 builder: (dialogContext) {
-                  final nameController =
-                      TextEditingController(text: _dataProfile!.data.name);
-                  final emailController =
-                      TextEditingController(text: _dataProfile!.data.email);
+                  final nameController = TextEditingController(
+                    text: _dataProfile!.data.name,
+                  );
+                  final emailController = TextEditingController(
+                    text: _dataProfile!.data.email,
+                  );
 
                   return AlertDialog(
                     title: const Text('Edit Data'),
@@ -138,8 +141,8 @@ class _HalamanUtamaDuaState extends State<HalamanUtamaDua> {
                             setState(() => _isLoading = true);
 
                             final result = await ProfileService.updateData(
-                                name: nameController.text,
-                                email: emailController.text 
+                              name: nameController.text,
+                              email: emailController.text,
                             );
 
                             if (!mounted) return;
@@ -159,8 +162,7 @@ class _HalamanUtamaDuaState extends State<HalamanUtamaDua> {
                             setState(() => _isLoading = false);
                             ScaffoldMessenger.of(parentContext).showSnackBar(
                               SnackBar(
-                                content:
-                                    Text('Gagal menyimpan perubahan: $e'),
+                                content: Text('Gagal menyimpan perubahan: $e'),
                                 backgroundColor: Colors.red,
                               ),
                             );
@@ -175,7 +177,7 @@ class _HalamanUtamaDuaState extends State<HalamanUtamaDua> {
             },
             style: ElevatedButton.styleFrom(
               minimumSize: const Size(double.infinity, 45),
-              backgroundColor: Colors.pinkAccent,
+              backgroundColor: const Color.fromARGB(255, 255, 166, 196),
               foregroundColor: Colors.white,
             ),
             child: const Text("Edit Data"),
